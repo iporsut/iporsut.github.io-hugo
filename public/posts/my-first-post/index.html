@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Weerasak Chongnguluam  | เชื่อมต่อ TCP socket หรือเปิด TCP socket ด้วยคำสั่ง nc</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="เชื่อมต่อ TCP socket หรือเปิด TCP socket ด้วยคำสั่ง nc" />
+<meta property="og:description" content="คำสั่ง nc เป็นคำสั่งที่ติดมากับ macOS (จริงๆผมว่าก็หาลงได้นะสำหรับ Linux) ที่ช่วยให้เราสามารถ connect TCP socket หรือแม้แต่เปิด TCP socket เพื่อให้คนอื่น connect เข้ามาได้
+เปิด TCP Socket วิธีเปิด TCP Socket ง่ายมากๆ ให้เราสั่งแค่นี้
+nc -l 1234  คือสั่ง nc ตามด้วย option -l (ลบแอล) แล้วตามด้วยหมายเลข port ที่ต้องการเปิด หลังจากนั้น
+เชื่อมต่อไปที่ TCP socket วิธีใช้ nc เพื่อต่อไปยัง TCP socket อื่นๆที่เปิดให้สั่งแค่แบบนี้
+nc 127.0.0.1 1234  คือแค่สั่ง nc ตามด้วย hostname/domain/ip ของปลายทาง แล้วก็ตามด้วยหมายเลข port เพียงเท่านี้ก็พร้อมที่จะส่งข้อมูลหากันแล้วโดยเราสามารถพิมพ์ข้อความแล้ว enter ข้อมูลก็จะถูกส่งไปหาอีกฝั่ง" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iporsut.github.io/posts/my-first-post/" />
+<meta property="article:published_time" content="2019-05-27T12:33:30+07:00" />
+<meta property="article:modified_time" content="2019-05-27T12:33:30+07:00" />
+<meta itemprop="name" content="เชื่อมต่อ TCP socket หรือเปิด TCP socket ด้วยคำสั่ง nc">
+<meta itemprop="description" content="คำสั่ง nc เป็นคำสั่งที่ติดมากับ macOS (จริงๆผมว่าก็หาลงได้นะสำหรับ Linux) ที่ช่วยให้เราสามารถ connect TCP socket หรือแม้แต่เปิด TCP socket เพื่อให้คนอื่น connect เข้ามาได้
+เปิด TCP Socket วิธีเปิด TCP Socket ง่ายมากๆ ให้เราสั่งแค่นี้
+nc -l 1234  คือสั่ง nc ตามด้วย option -l (ลบแอล) แล้วตามด้วยหมายเลข port ที่ต้องการเปิด หลังจากนั้น
+เชื่อมต่อไปที่ TCP socket วิธีใช้ nc เพื่อต่อไปยัง TCP socket อื่นๆที่เปิดให้สั่งแค่แบบนี้
+nc 127.0.0.1 1234  คือแค่สั่ง nc ตามด้วย hostname/domain/ip ของปลายทาง แล้วก็ตามด้วยหมายเลข port เพียงเท่านี้ก็พร้อมที่จะส่งข้อมูลหากันแล้วโดยเราสามารถพิมพ์ข้อความแล้ว enter ข้อมูลก็จะถูกส่งไปหาอีกฝั่ง">
+
+
+<meta itemprop="datePublished" content="2019-05-27T12:33:30&#43;07:00" />
+<meta itemprop="dateModified" content="2019-05-27T12:33:30&#43;07:00" />
+<meta itemprop="wordCount" content="59">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="เชื่อมต่อ TCP socket หรือเปิด TCP socket ด้วยคำสั่ง nc"/>
+<meta name="twitter:description" content="คำสั่ง nc เป็นคำสั่งที่ติดมากับ macOS (จริงๆผมว่าก็หาลงได้นะสำหรับ Linux) ที่ช่วยให้เราสามารถ connect TCP socket หรือแม้แต่เปิด TCP socket เพื่อให้คนอื่น connect เข้ามาได้
+เปิด TCP Socket วิธีเปิด TCP Socket ง่ายมากๆ ให้เราสั่งแค่นี้
+nc -l 1234  คือสั่ง nc ตามด้วย option -l (ลบแอล) แล้วตามด้วยหมายเลข port ที่ต้องการเปิด หลังจากนั้น
+เชื่อมต่อไปที่ TCP socket วิธีใช้ nc เพื่อต่อไปยัง TCP socket อื่นๆที่เปิดให้สั่งแค่แบบนี้
+nc 127.0.0.1 1234  คือแค่สั่ง nc ตามด้วย hostname/domain/ip ของปลายทาง แล้วก็ตามด้วยหมายเลข port เพียงเท่านี้ก็พร้อมที่จะส่งข้อมูลหากันแล้วโดยเราสามารถพิมพ์ข้อความแล้ว enter ข้อมูลก็จะถูกส่งไปหาอีกฝั่ง"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://iporsut.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Weerasak Chongnguluam
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">เชื่อมต่อ TCP socket หรือเปิด TCP socket ด้วยคำสั่ง nc</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-05-27T12:33:30&#43;07:00">May 27, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>คำสั่ง nc เป็นคำสั่งที่ติดมากับ macOS (จริงๆผมว่าก็หาลงได้นะสำหรับ Linux) ที่ช่วยให้เราสามารถ connect TCP socket หรือแม้แต่เปิด TCP socket เพื่อให้คนอื่น connect เข้ามาได้</p>
+
+<h2 id="เป-ด-tcp-socket">เปิด TCP Socket</h2>
+
+<p>วิธีเปิด TCP Socket ง่ายมากๆ ให้เราสั่งแค่นี้</p>
+
+<pre><code>nc -l 1234
+</code></pre>
+
+<p>คือสั่ง nc ตามด้วย option -l (ลบแอล) แล้วตามด้วยหมายเลข port ที่ต้องการเปิด หลังจากนั้น</p>
+
+<h2 id="เช-อมต-อไปท-tcp-socket">เชื่อมต่อไปที่ TCP socket</h2>
+
+<p>วิธีใช้ nc เพื่อต่อไปยัง TCP socket อื่นๆที่เปิดให้สั่งแค่แบบนี้</p>
+
+<pre><code>nc 127.0.0.1 1234
+</code></pre>
+
+<p>คือแค่สั่ง nc ตามด้วย hostname/domain/ip ของปลายทาง แล้วก็ตามด้วยหมายเลข port เพียงเท่านี้ก็พร้อมที่จะส่งข้อมูลหากันแล้วโดยเราสามารถพิมพ์ข้อความแล้ว enter ข้อมูลก็จะถูกส่งไปหาอีกฝั่ง</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://iporsut.github.io/" >
+    &copy; 2019 Weerasak Chongnguluam
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
