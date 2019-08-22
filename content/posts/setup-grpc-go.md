@@ -5,14 +5,14 @@ draft: false
 summary: "GRPC เป็น RPC (Remote Procedure Call) Framework ที่ช่วยให้เราสร้าง service เพื่อให้คนอื่นเรียกใช้งานได้เนี่ยแหละ ทีนี้ตัว runtime มันก็มีออกมาให้ใช้งานร่วมกับหลายๆภาษา แต่วันนี้จะลองลงเครื่องมือที่จำเป็นเบื้องต้นเพื่อให้ลองใช้ได้ สร้าง service ง่ายๆเช่นพ่น Hello World กลับออกไป"
 ---
 
-GRPC เป็น RPC (Remote Procedure Call) Framework ที่ช่วยให้เราสร้าง service เพื่อให้คนอื่นเรียกใช้งานได้เนี่ยแหละ ทีนี้ตัว runtime มันก็มีออกมาให้ใช้งานร่วมกับหลายๆภาษา แต่วันนี้จะลองลงเครื่องมือที่จำเป็นเบื้องต้นเพื่อให้ลองใช้ได้ สร้าง service ง่ายๆเช่นพ่น Hello World กลับออกไป
+[GRPC](https://grpc.io) เป็น RPC (Remote Procedure Call) Framework ที่ช่วยให้เราสร้าง service เพื่อให้คนอื่นเรียกใช้งานได้เนี่ยแหละ ทีนี้ตัว runtime มันก็มีออกมาให้ใช้งานร่วมกับหลายๆภาษา แต่วันนี้จะลองลงเครื่องมือที่จำเป็นเบื้องต้นเพื่อให้ลองใช้ได้ สร้าง service ง่ายๆเช่นพ่น Hello World กลับออกไป
 
 ## เครื่องมือที่ต้องติดตั้ง
 
 1. Go - แน่นอนอันนี้ต้องลงไว้สิ วิธีลงหาต่อเองนะใน https://golang.org/dl/
-2. protoc - Protobuf (Protocal Buffer) compiler คือ GRPC เนี่ยใช้ Protocal Buffer เพื่อกำหนด spec servic, emethod ที่มีของ service และ โครงสร้างของ message ต่างๆที่จะถูกส่งมาเป็น argument ให้กับ method ซึ่งเราจะใช้ protoc เพื่อช่วย generate จาก protobuf ให้เป็นโค้ดในภาษาที่เราต้องการเอาไปสร้าง service ซึ่ง protoc จะสร้างโค้ดที่เอาไว้สำหรับเป็น client ให้ด้วย
-3. protoc-gen-go - ตัวนี้เป็น protoc plugin คือเพื่อช่วยให้ protoc มัน generate code Go ได้นั่นเอง
-4. Go package google.golang.org/grpc - ส่วนอันนี้เป็น package Go ที่เราจะใช้สำหรับ implement GRPC service ด้วย Go
+2. protoc - [Protobuf](https://developers.google.com/protocol-buffers/) (Protocal Buffer) compiler คือ GRPC เนี่ยใช้ Protocal Buffer เพื่อกำหนด spec servic, emethod ที่มีของ service และ โครงสร้างของ message ต่างๆที่จะถูกส่งมาเป็น argument ให้กับ method ซึ่งเราจะใช้ protoc เพื่อช่วย generate จาก protobuf ให้เป็นโค้ดในภาษาที่เราต้องการเอาไปสร้าง service ซึ่ง protoc จะสร้างโค้ดที่เอาไว้สำหรับเป็น client ให้ด้วย
+3. [protoc-gen-go](https://github.com/golang/protobuf/#grpc-support) - ตัวนี้เป็น protoc plugin คือเพื่อช่วยให้ protoc มัน generate code Go ได้นั่นเอง
+4. Go package [google.golang.org/grpc](https://godoc.org/google.golang.org/grpc) - ส่วนอันนี้เป็น package Go ที่เราจะใช้สำหรับ implement GRPC service ด้วย Go
 
 ## เริ่มทำ Hello World service
 
@@ -28,7 +28,7 @@ brew install go
 
 ### ติดตั้ง protoc
 
-ผมใช้ macOS และใช้ brew เป็นตัวช่วยในการจัดการติดตั้งโปรแกรมต่างๆ ดังนั้นผมเลยเริ่มจากการติดตั้ง protoc ผ่าน brew ดังนี้
+ผมใช้ macOS และใช้ [brew](https://brew.sh) เป็นตัวช่วยในการจัดการติดตั้งโปรแกรมต่างๆ ดังนั้นผมเลยเริ่มจากการติดตั้ง protoc ผ่าน brew ดังนี้
 
 ```
 brew install protobuf
