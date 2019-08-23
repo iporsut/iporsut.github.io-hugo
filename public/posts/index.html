@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://iporsut.github.io/posts/" />
 
-<meta property="og:updated_time" content="2019-06-03T21:13:40+07:00" />
+<meta property="og:updated_time" content="2019-06-11T21:00:00+07:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="Weerasak Chongnguluam&#39;s blog">
 
@@ -115,6 +115,25 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/xcode-manpath/" class="link black dim">
+        MANPATH ลับของ Xcode
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      man เป็นคำสั่งเพื่อดู manual คู่มือต่างๆของระบบ Unix หรือระบบแบบ Unix อื่นๆ ไม่ว่าจะ Linux/BSD/macOS ซึ่งเวลาใช้งานก็สั่ง man ตามด้วยชื่อคำสั่งหรือชื่อหัวข้อที่ต้องการดูเช่น
+man ls  MANPATH จริงๆแล้วคำสั่ง man จะไปค้นหาไฟล์ที่เป็นคู่มือที่อยู่ใน PATH ที่กำหนดในตัวแปร MANPAH หรืออยู่ในไฟล์ /etc/man.conf ซึ่งเราสามารถใช้คำสั่ง man &ndash;path เพื่อดูรายการของ path ที่จะถูกค้นหาได้
+จากรูปสิ่งที่วงไว้กรอบสีแดงคือ path ของ man page ต่างๆของ Xcode ปัญหามันอยู่ตรงที่ผมพยายามหา config ที่ระบุ path พวกนี้ไม่เจอเลย เลยสงสัยว่า man มันไปอ่านค่าพวกนี้มาจากไหน
+หลังจากค้นหาไปสักพักก็กระจ่างแจ้งเลย เมื่อเจอลิ้งนี้ Man pages on OSX + Xcode Developer tools
+นั่นก็คือ APPLE แก้โค้ดของ man ตัวที่ใช้กับ macOS ให้หา path ที่เกี่ยวกับ Xcode เป็น default MANPATH นั่นเอง เล่น patch โค้ดกันแบบนี้เลย แล้วในคู่คือของคำสั่ง man เองก็ดันไม่ยอมแก้เพื่ออธิบายไว้ด้วยนะ
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
