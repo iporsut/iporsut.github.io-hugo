@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://iporsut.github.io/" />
 
-<meta property="og:updated_time" content="2019-05-30T12:33:30+07:00" />
+<meta property="og:updated_time" content="2019-05-31T04:48:35+07:00" />
 <meta itemprop="name" content="Weerasak Chongnguluam">
 <meta itemprop="description" content="Weerasak Chongnguluam&#39;s blog">
 
@@ -146,6 +146,36 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/ruby-escape-html-entities/" class="color-inherit dim link">
+            Ruby Escape HTML Entities
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          เวลาที่เราต้องเอาโค้ดมาแสดงที่หน้า HTML เนี่ย บางครั้งสัญลักษณ์ที่ใช้ในโค้ดนั้นก็ดันเป็นสัญลักษณ์ที่ถูกใช้ใน syntax ของ HTML เอง ซึ่งอักษรเหล่านี้เรียกว่า HTML Entities ดังนั้นเวลาจะเขียนสัญลักษณ์พวกนี้ต้องถูกเขียนอยู่ในรูปแบบอื่นที่เข้ารหัสไว้ เช่นจะเขียนเครื่องหมายน้อยกว่า ก็ต้องเขียนเป็น &lt; จะเขียนเครื่องหมายมากกว่าก็ต้องเขียนเป็น &gt;
+สำหรับภาษา Ruby นั่นมี class CGI ที่มี method escapeHTML ให้เราแปลงจากสัญลักษณ์ที่เขียนปกติไปเป็นรูปแบบ HTML Entities และมี unescapeHTML เพื่อแปลงกลับ
+ตัวอย่าง escapeHTML คือใช้แบบนี้
+require &quot;cgi&quot;; puts CGI.escapeHTML('&lt;div&gt;Hello&lt;/div&gt;');  ก็จะถูกแปลงเป็น
+&amp;lt;div&amp;gt;Hello&amp;lt;/div&amp;gt;  ตัวอย่าง unescapeHTML คือใช้แบบนี้
+require &quot;cgi&quot;; puts CGI.unescapeHTML('&amp;lt;div&amp;gt;Hello&amp;lt;/div&amp;gt;');  ก็จะถูกแปลงกลับเป็น
+&lt;div&gt;Hello&lt;/div&gt;  
+        </div>
+          <a href="/posts/ruby-escape-html-entities/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/code-block-style/" class="color-inherit dim link">
             เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ
             </a>
@@ -189,32 +219,25 @@ body { line-height: 140%; margin: 50px; } pre &gt; code { font-size: 120%; backg
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/nc/" class="color-inherit dim link">
-            เชื่อมต่อ TCP socket หรือเปิด TCP socket ด้วยคำสั่ง nc
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          คำสั่ง nc เป็นคำสั่งที่ติดมากับ macOS (จริงๆผมว่าก็หาลงได้นะสำหรับ Linux) ที่ช่วยให้เราสามารถ connect TCP socket หรือแม้แต่เปิด TCP socket เพื่อให้คนอื่น connect เข้ามาได้
-        </div>
-          <a href="/posts/nc/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
+      
+      <section class="w-100">
+        <h1 class="f3">More</h1>
+        
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/nc/" class="link black dim">
+              เชื่อมต่อ TCP socket หรือเปิด TCP socket ด้วยคำสั่ง nc
+            </a>
+          </h2>
+        
+
+        
+        
+          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
+        
+        </section>
       
 
       </div>

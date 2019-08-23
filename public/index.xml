@@ -6,10 +6,25 @@
     <description>Recent content on Weerasak Chongnguluam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 May 2019 12:33:30 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 04:48:35 +0700</lastBuildDate>
     
 	<atom:link href="https://iporsut.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ruby Escape HTML Entities</title>
+      <link>https://iporsut.github.io/posts/ruby-escape-html-entities/</link>
+      <pubDate>Fri, 31 May 2019 04:48:35 +0700</pubDate>
+      
+      <guid>https://iporsut.github.io/posts/ruby-escape-html-entities/</guid>
+      <description>เวลาที่เราต้องเอาโค้ดมาแสดงที่หน้า HTML เนี่ย บางครั้งสัญลักษณ์ที่ใช้ในโค้ดนั้นก็ดันเป็นสัญลักษณ์ที่ถูกใช้ใน syntax ของ HTML เอง ซึ่งอักษรเหล่านี้เรียกว่า HTML Entities ดังนั้นเวลาจะเขียนสัญลักษณ์พวกนี้ต้องถูกเขียนอยู่ในรูปแบบอื่นที่เข้ารหัสไว้ เช่นจะเขียนเครื่องหมายน้อยกว่า ก็ต้องเขียนเป็น &amp;lt; จะเขียนเครื่องหมายมากกว่าก็ต้องเขียนเป็น &amp;gt;
+สำหรับภาษา Ruby นั่นมี class CGI ที่มี method escapeHTML ให้เราแปลงจากสัญลักษณ์ที่เขียนปกติไปเป็นรูปแบบ HTML Entities และมี unescapeHTML เพื่อแปลงกลับ
+ตัวอย่าง escapeHTML คือใช้แบบนี้
+require &amp;quot;cgi&amp;quot;; puts CGI.escapeHTML(&#39;&amp;lt;div&amp;gt;Hello&amp;lt;/div&amp;gt;&#39;);  ก็จะถูกแปลงเป็น
+&amp;amp;lt;div&amp;amp;gt;Hello&amp;amp;lt;/div&amp;amp;gt;  ตัวอย่าง unescapeHTML คือใช้แบบนี้
+require &amp;quot;cgi&amp;quot;; puts CGI.unescapeHTML(&#39;&amp;amp;lt;div&amp;amp;gt;Hello&amp;amp;lt;/div&amp;amp;gt;&#39;);  ก็จะถูกแปลงกลับเป็น
+&amp;lt;div&amp;gt;Hello&amp;lt;/div&amp;gt;  </description>
+    </item>
     
     <item>
       <title>เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ</title>
