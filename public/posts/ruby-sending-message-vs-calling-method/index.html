@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Weerasak Chongnguluam </title>
+    <title>Weerasak Chongnguluam  | Ruby: ความแตกต่างระหว่างการ ส่ง message และ เรียก method</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.57.2" />
     
@@ -24,31 +24,50 @@
     
 
     
-      <link href="https://iporsut.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Weerasak Chongnguluam" />
-      <link href="https://iporsut.github.io/index.xml" rel="feed" type="application/rss+xml" title="Weerasak Chongnguluam" />
-    
 
-    <meta property="og:title" content="Weerasak Chongnguluam" />
-<meta property="og:description" content="Weerasak Chongnguluam&#39;s blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://iporsut.github.io/" />
+    <meta property="og:title" content="Ruby: ความแตกต่างระหว่างการ ส่ง message และ เรียก method" />
+<meta property="og:description" content="เรียก method ในภาษาที่รองรับการเขียนโปรแกรมแบบ Object Oriented ส่วนใหญ่แล้วก็ให้เราสร้าง Class เพื่อเป็นพิมพ์เขียวให้การสร้าง Object ซึ่งรายละเอียดของที่อยู่ใน Class นั่นก็คือ method ที่จะเป็นพฤติกรรมที่ Object นั้นสามารถทำได้ ดังนั้นส่วนใหญ่แล้วเวลาเราเห็นโค้ดแบบนี้ เช่น
+num = str.to_i  จะหมายถึงว่าเราเรียก method to_i ของ object str
+ส่ง message แต่ในอีกมุมนึงความสำคัญของ Object Oriented นั้นไม่ได้อยู่ที่ตัว Object เอง แต่อยู่ที่การสื่อสารกันระหว่างแต่ละ Object ผ่านการส่ง message หากัน
+Alan Kay ที่เรายกให้เขาเป็นผู้ให้กำเนิดแนวคิด OOP (จริงๆแล้วก็ช่วยกันหลายคน) ได้เคยตอบเมลลิ้งลิสต์เรื่อง prototypes vs classes was: Re: Sun&rsquo;s HotSpot ซึ่งพูดถึงเรื่อง Object เอาไว้ว่า
+ I&rsquo;m sorry that I long ago coined the term &ldquo;objects&rdquo; for this topic because it gets many people to focus on the lesser idea." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iporsut.github.io/posts/ruby-sending-message-vs-calling-method/" />
+<meta property="article:published_time" content="2019-06-03T21:13:40+07:00" />
+<meta property="article:modified_time" content="2019-06-03T21:13:40+07:00" />
+<meta itemprop="name" content="Ruby: ความแตกต่างระหว่างการ ส่ง message และ เรียก method">
+<meta itemprop="description" content="เรียก method ในภาษาที่รองรับการเขียนโปรแกรมแบบ Object Oriented ส่วนใหญ่แล้วก็ให้เราสร้าง Class เพื่อเป็นพิมพ์เขียวให้การสร้าง Object ซึ่งรายละเอียดของที่อยู่ใน Class นั่นก็คือ method ที่จะเป็นพฤติกรรมที่ Object นั้นสามารถทำได้ ดังนั้นส่วนใหญ่แล้วเวลาเราเห็นโค้ดแบบนี้ เช่น
+num = str.to_i  จะหมายถึงว่าเราเรียก method to_i ของ object str
+ส่ง message แต่ในอีกมุมนึงความสำคัญของ Object Oriented นั้นไม่ได้อยู่ที่ตัว Object เอง แต่อยู่ที่การสื่อสารกันระหว่างแต่ละ Object ผ่านการส่ง message หากัน
+Alan Kay ที่เรายกให้เขาเป็นผู้ให้กำเนิดแนวคิด OOP (จริงๆแล้วก็ช่วยกันหลายคน) ได้เคยตอบเมลลิ้งลิสต์เรื่อง prototypes vs classes was: Re: Sun&rsquo;s HotSpot ซึ่งพูดถึงเรื่อง Object เอาไว้ว่า
+ I&rsquo;m sorry that I long ago coined the term &ldquo;objects&rdquo; for this topic because it gets many people to focus on the lesser idea.">
 
-<meta property="og:updated_time" content="2019-06-03T21:13:40+07:00" />
-<meta itemprop="name" content="Weerasak Chongnguluam">
-<meta itemprop="description" content="Weerasak Chongnguluam&#39;s blog">
 
+<meta itemprop="datePublished" content="2019-06-03T21:13:40&#43;07:00" />
+<meta itemprop="dateModified" content="2019-06-03T21:13:40&#43;07:00" />
+<meta itemprop="wordCount" content="161">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Weerasak Chongnguluam"/>
-<meta name="twitter:description" content="Weerasak Chongnguluam&#39;s blog"/>
+<meta name="twitter:title" content="Ruby: ความแตกต่างระหว่างการ ส่ง message และ เรียก method"/>
+<meta name="twitter:description" content="เรียก method ในภาษาที่รองรับการเขียนโปรแกรมแบบ Object Oriented ส่วนใหญ่แล้วก็ให้เราสร้าง Class เพื่อเป็นพิมพ์เขียวให้การสร้าง Object ซึ่งรายละเอียดของที่อยู่ใน Class นั่นก็คือ method ที่จะเป็นพฤติกรรมที่ Object นั้นสามารถทำได้ ดังนั้นส่วนใหญ่แล้วเวลาเราเห็นโค้ดแบบนี้ เช่น
+num = str.to_i  จะหมายถึงว่าเราเรียก method to_i ของ object str
+ส่ง message แต่ในอีกมุมนึงความสำคัญของ Object Oriented นั้นไม่ได้อยู่ที่ตัว Object เอง แต่อยู่ที่การสื่อสารกันระหว่างแต่ละ Object ผ่านการส่ง message หากัน
+Alan Kay ที่เรายกให้เขาเป็นผู้ให้กำเนิดแนวคิด OOP (จริงๆแล้วก็ช่วยกันหลายคน) ได้เคยตอบเมลลิ้งลิสต์เรื่อง prototypes vs classes was: Re: Sun&rsquo;s HotSpot ซึ่งพูดถึงเรื่อง Object เอาไว้ว่า
+ I&rsquo;m sorry that I long ago coined the term &ldquo;objects&rdquo; for this topic because it gets many people to focus on the lesser idea."/>
 
   </head>
 
   <body class="ma0 avenir bg-near-white">
 
     
+   
+  
 
   <header>
-    <div class="pb3-m pb6-l bg-black">
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://iporsut.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -100,167 +119,79 @@
   </div>
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Weerasak Chongnguluam
-        </h1>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Ruby: ความแตกต่างระหว่างการ ส่ง message และ เรียก method</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-06-03T21:13:40&#43;07:00">June 3, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="เร-ยก-method">เรียก method</h2>
+
+<p>ในภาษาที่รองรับการเขียนโปรแกรมแบบ Object Oriented ส่วนใหญ่แล้วก็ให้เราสร้าง Class เพื่อเป็นพิมพ์เขียวให้การสร้าง Object ซึ่งรายละเอียดของที่อยู่ใน Class นั่นก็คือ method ที่จะเป็นพฤติกรรมที่ Object นั้นสามารถทำได้ ดังนั้นส่วนใหญ่แล้วเวลาเราเห็นโค้ดแบบนี้ เช่น</p>
+
+<pre><code>num = str.to_i
+</code></pre>
+
+<p>จะหมายถึงว่าเราเรียก method to_i ของ object str</p>
+
+<h2 id="ส-ง-message">ส่ง message</h2>
+
+<p>แต่ในอีกมุมนึงความสำคัญของ Object Oriented นั้นไม่ได้อยู่ที่ตัว Object เอง แต่อยู่ที่การสื่อสารกันระหว่างแต่ละ Object ผ่านการส่ง message หากัน</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Alan_Kay">Alan Kay</a> ที่เรายกให้เขาเป็นผู้ให้กำเนิดแนวคิด OOP (จริงๆแล้วก็ช่วยกันหลายคน) ได้เคยตอบเมลลิ้งลิสต์เรื่อง <a href="http://lists.squeakfoundation.org/pipermail/squeak-dev/1998-October/017019.html">prototypes vs classes was: Re: Sun&rsquo;s HotSpot</a> ซึ่งพูดถึงเรื่อง Object เอาไว้ว่า</p>
+
+<blockquote>
+<p>I&rsquo;m sorry that I long ago coined the term &ldquo;objects&rdquo; for this topic because it gets many people to focus on the lesser idea. The big idea is &ldquo;messaging&rdquo;</p>
+</blockquote>
+
+<p>และสำหรับ Ruby ถ้าเราเลือกที่จะพูดว่า str.to_i คือการส่ง message to_i ไปให้ object str แล้ว object str ค่อยเป็นคนตัดสินใจเองว่าได้รับ message to_i แล้วจะเรียก method ไหนให้ทำงานจะดูชัดเจนกว่า เพราะในโลกของ Ruby นั้น เราสามารถทำให้ object ตัดสินใจภายหลังได้ว่าจะทำอะไร โดยที่เราไม่ต้องสร้าง method ชื่อเดียวกันกับ message ที่ได้รับเสมอไป โดยการ implement method ชื่อ method_missing นั่นเอง เช่น</p>
+
+<pre><code>class C
+  def method_missing(m, *args, &amp;block)
+    puts &quot;Receiving message: %s&quot; % m
+  end
+end
+
+c = C.new
+c.hello_world
+</code></pre>
+
+<p>จากโค้ด class C ไม่มี method hello_world มีแค่ method_missing แต่เราสามารถส่ง message hello_world ไปให้ object ของ class C ทำงานได้ ซึ่งผลลัพธ์ที่ได้จากโค้ดข้างบนคือข้อความ Receiving message: hello_world</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
   </article>
-  
-  
-  
-  
-  
-  
-  
-    
-    
-
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
-      
-       
-          <h1 class="flex-none">
-            Recent Posts
-          </h1>
-        
-
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/ruby-sending-message-vs-calling-method/" class="color-inherit dim link">
-            Ruby: ความแตกต่างระหว่างการ ส่ง message และ เรียก method
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          เรียก method ในภาษาที่รองรับการเขียนโปรแกรมแบบ Object Oriented ส่วนใหญ่แล้วก็ให้เราสร้าง Class เพื่อเป็นพิมพ์เขียวให้การสร้าง Object ซึ่งรายละเอียดของที่อยู่ใน Class นั่นก็คือ method ที่จะเป็นพฤติกรรมที่ Object นั้นสามารถทำได้ ดังนั้นส่วนใหญ่แล้วเวลาเราเห็นโค้ดแบบนี้ เช่น
-num = str.to_i  จะหมายถึงว่าเราเรียก method to_i ของ object str
-ส่ง message แต่ในอีกมุมนึงความสำคัญของ Object Oriented นั้นไม่ได้อยู่ที่ตัว Object เอง แต่อยู่ที่การสื่อสารกันระหว่างแต่ละ Object ผ่านการส่ง message หากัน
-Alan Kay ที่เรายกให้เขาเป็นผู้ให้กำเนิดแนวคิด OOP (จริงๆแล้วก็ช่วยกันหลายคน) ได้เคยตอบเมลลิ้งลิสต์เรื่อง prototypes vs classes was: Re: Sun&rsquo;s HotSpot ซึ่งพูดถึงเรื่อง Object เอาไว้ว่า
- I&rsquo;m sorry that I long ago coined the term &ldquo;objects&rdquo; for this topic because it gets many people to focus on the lesser idea.
-        </div>
-          <a href="/posts/ruby-sending-message-vs-calling-method/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/el-ruby-escape-unescape-html/" class="color-inherit dim link">
-            สร้าง elisp ฟังก์ชันเพื่อ Escape HTML Entities โดยเรียกใช้ Ruby
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          ผมใช้ Emacs เป็นเครื่องมือหลักในการเขียนโค้ด รวมทั้งที่ใช้เขียน blog post นี้อยู่ด้วย ซึ่ง เราสามารถเพิ่มความสามารถต่างๆให้ Emacs ได้โดยการเขียน elisp ซึ่งเป็นภาษาตระกูล LISP ภาษาหนึ่งซึ่งติดมากับตัว Emacs เลย
-ผมอยากได้ฟีเจอร์นึงคือแปลงโค้ด HTML โดย escape HTML Entities ใน text ที่ผมเลือกเอาไว้อยู่ ซึ่งผมสามารถเขียน elisp ฟังก์ชันเพื่อช่วยแปลงได้ เพราะว่าผมพยายามหาแล้วมีคนเขียนฟังก์ชันไว้แล้วหลายคน แต่ไม่ถูกใจผม ผมอยากได้แบบเดียวกันกับที่ Ruby CGI.escape ทำซึ่งผมเขียนไว้ในโพสต์ก่อนหน้านี้
-ผมเลยได้ท่านี้มาคือ เขียน elisp ฟังก์ชันให้ส่งโค้ด Ruby ไปทำงานแล้วเอาผลลัพธ์กลับมา หน้าตา source code ของ elisp ฟังก์ชันเลยออกมาเป็นแบบนี้
-(defun escape-html (start end) (interactive &quot;r&quot;) (if (use-region-p) (let ((regionp (buffer-substring start end))) (delete-region start end) (call-process-region regionp nil &quot;ruby&quot; nil t nil &quot;-e&quot; &quot;# encoding: utf-8 require 'cgi' print CGI.
-        </div>
-          <a href="/posts/el-ruby-escape-unescape-html/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/what-can-be-inside-tag-p/" class="color-inherit dim link">
-            HTML: มีอะไรอยู่ได้บ้างภายใน tag &lt;p&gt;
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          จากรูปจะเห็นว่าผมมี tag &lt;p&gt; เปิดในบรรทัด 18 และ tag &lt;/p&gt; ในบรรทัดที่ 33 แต่ว่า browser กลับบอกว่า tag ปิดนั้น error เพราะไม่ tag เปิดซะอย่างนั้น
-ผมจึงไปค้นมาว่าทำไม browser ถึงบอกแบบนี้ ไปเจอมาจากเว็บของ MDN (Mozilla Developer Network) https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p
- Paragraphs are block-level elements, and notably will automatically close if another block-level element is parsed before the closing &lt;/p&gt; tag.
- นั่นคือ tag &lt;p&gt; เป็น block-level elements ซึ่ง HTML elements นั้นแบ่งได้หลักๆสองกลุ่มคือ block-level element กับ inline-level element และตาม document ของ tag p นั้น จะถือว่า tag โดนปิดอัตโนมัติ ถ้าเจอ block-level elements ก่อนที่จะเจอ tag ปิดนั่นเอง
-        </div>
-          <a href="/posts/what-can-be-inside-tag-p/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-      </section>
-
-      
-      <section class="w-100">
-        <h1 class="f3">More</h1>
-        
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/ruby-escape-html-entities/" class="link black dim">
-              Ruby Escape HTML Entities
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/code-block-style/" class="link black dim">
-              เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/setup-grpc-go/" class="link black dim">
-              ติดตั้งของเพื่อสร้าง GRPC service ด้วย Go
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/nc/" class="link black dim">
-              เชื่อมต่อ TCP socket หรือเปิด TCP socket ด้วยคำสั่ง nc
-            </a>
-          </h2>
-        
-
-        
-        
-          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
-        
-        </section>
-      
-
-      </div>
-  
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
