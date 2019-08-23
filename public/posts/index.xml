@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Weerasak Chongnguluam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 May 2019 04:48:35 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 22:35:00 +0700</lastBuildDate>
     
 	<atom:link href="https://iporsut.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTML: มีอะไรอยู่ได้บ้างภายใน tag &lt;p&gt;</title>
+      <link>https://iporsut.github.io/posts/what-can-be-inside-tag-p/</link>
+      <pubDate>Fri, 31 May 2019 22:35:00 +0700</pubDate>
+      
+      <guid>https://iporsut.github.io/posts/what-can-be-inside-tag-p/</guid>
+      <description>จากรูปจะเห็นว่าผมมี tag &amp;lt;p&amp;gt; เปิดในบรรทัด 18 และ tag &amp;lt;/p&amp;gt; ในบรรทัดที่ 33 แต่ว่า browser กลับบอกว่า tag ปิดนั้น error เพราะไม่ tag เปิดซะอย่างนั้น
+ผมจึงไปค้นมาว่าทำไม browser ถึงบอกแบบนี้ ไปเจอมาจากเว็บของ MDN (Mozilla Developer Network) https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p
+ Paragraphs are block-level elements, and notably will automatically close if another block-level element is parsed before the closing &amp;lt;/p&amp;gt; tag.
+ นั่นคือ tag &amp;lt;p&amp;gt; เป็น block-level elements ซึ่ง HTML elements นั้นแบ่งได้หลักๆสองกลุ่มคือ block-level element กับ inline-level element และตาม document ของ tag p นั้น จะถือว่า tag โดนปิดอัตโนมัติ ถ้าเจอ block-level elements ก่อนที่จะเจอ tag ปิดนั่นเอง</description>
+    </item>
     
     <item>
       <title>Ruby Escape HTML Entities</title>

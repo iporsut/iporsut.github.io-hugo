@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://iporsut.github.io/" />
 
-<meta property="og:updated_time" content="2019-05-31T04:48:35+07:00" />
+<meta property="og:updated_time" content="2019-05-31T22:35:00+07:00" />
 <meta itemprop="name" content="Weerasak Chongnguluam">
 <meta itemprop="description" content="Weerasak Chongnguluam&#39;s blog">
 
@@ -146,6 +146,33 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/what-can-be-inside-tag-p/" class="color-inherit dim link">
+            HTML: มีอะไรอยู่ได้บ้างภายใน tag &lt;p&gt;
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          จากรูปจะเห็นว่าผมมี tag &lt;p&gt; เปิดในบรรทัด 18 และ tag &lt;/p&gt; ในบรรทัดที่ 33 แต่ว่า browser กลับบอกว่า tag ปิดนั้น error เพราะไม่ tag เปิดซะอย่างนั้น
+ผมจึงไปค้นมาว่าทำไม browser ถึงบอกแบบนี้ ไปเจอมาจากเว็บของ MDN (Mozilla Developer Network) https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p
+ Paragraphs are block-level elements, and notably will automatically close if another block-level element is parsed before the closing &lt;/p&gt; tag.
+ นั่นคือ tag &lt;p&gt; เป็น block-level elements ซึ่ง HTML elements นั้นแบ่งได้หลักๆสองกลุ่มคือ block-level element กับ inline-level element และตาม document ของ tag p นั้น จะถือว่า tag โดนปิดอัตโนมัติ ถ้าเจอ block-level elements ก่อนที่จะเจอ tag ปิดนั่นเอง
+        </div>
+          <a href="/posts/what-can-be-inside-tag-p/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/ruby-escape-html-entities/" class="color-inherit dim link">
             Ruby Escape HTML Entities
             </a>
@@ -195,36 +222,18 @@ body { line-height: 140%; margin: 50px; } pre &gt; code { font-size: 120%; backg
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/setup-grpc-go/" class="color-inherit dim link">
-            ติดตั้งของเพื่อสร้าง GRPC service ด้วย Go
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          GRPC เป็น RPC (Remote Procedure Call) Framework ที่ช่วยให้เราสร้าง service เพื่อให้คนอื่นเรียกใช้งานได้เนี่ยแหละ ทีนี้ตัว runtime มันก็มีออกมาให้ใช้งานร่วมกับหลายๆภาษา แต่วันนี้จะลองลงเครื่องมือที่จำเป็นเบื้องต้นเพื่อให้ลองใช้ได้ สร้าง service ง่ายๆเช่นพ่น Hello World กลับออกไป
-        </div>
-          <a href="/posts/setup-grpc-go/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/setup-grpc-go/" class="link black dim">
+              ติดตั้งของเพื่อสร้าง GRPC service ด้วย Go
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/nc/" class="link black dim">
