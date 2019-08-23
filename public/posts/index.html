@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://iporsut.github.io/posts/" />
 
-<meta property="og:updated_time" content="2019-05-29T23:50:10+07:00" />
+<meta property="og:updated_time" content="2019-05-30T12:33:30+07:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="Weerasak Chongnguluam&#39;s blog">
 
@@ -120,6 +120,24 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/code-block-style/" class="link black dim">
+        เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ เนื่องจากตอนนี้เวลาแสดง code ใน page ผมใช้ของง่ายๆคือ tag pre และ code เช่น
+&lt;pre&gt;&lt;code&gt;puts &quot;Hello, World&quot;&lt;/code&gt;&lt;/pre&gt;  ซึ่งมันจะ render ออกมาดิบๆ แบบนี้
+puts &quot;Hello, World&quot; ผมยังเลยลองปรับ style ให้กับแต่ละ pre &gt; code อีกนิดนึงโดยใช้ CSS แบบนี้
+body { line-height: 140%; margin: 50px; } pre &gt; code { font-size: 120%; background-color: #eee; border: 1px solid #999; display: block; padding: 20px; word-wrap: break-word; }  พอได้ CSS แบบนี้ก็ทำให้ตรงส่วนที่เป็นโค้ดอ่านง่ายขึ้นมาหน่อย ซึ่งก็ปรับง่ายๆแค่เปลี่ยนสี background-color ปรับ display ให้มันเป็น block แล้วปรับ padding ระยะระหว่าง text ข้างในกับขอบของ block แล้วก็ตีเส้นกรอบนิดหน่อย
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/setup-grpc-go/" class="link black dim">
         ติดตั้งของเพื่อสร้าง GRPC service ด้วย Go
       </a>
@@ -141,24 +159,6 @@
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       คำสั่ง nc เป็นคำสั่งที่ติดมากับ macOS (จริงๆผมว่าก็หาลงได้นะสำหรับ Linux) ที่ช่วยให้เราสามารถ connect TCP socket หรือแม้แต่เปิด TCP socket เพื่อให้คนอื่น connect เข้ามาได้
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/code-block-style/" class="link black dim">
-        เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ เนื่องจากตอนนี้เวลาแสดง code ใน page ผมใช้ของง่ายๆคือ tag pre และ code เช่น
-&lt;pre&gt;&lt;code&gt;puts &quot;Hello, World&quot;&lt;/code&gt;&lt;/pre&gt;  ซึ่งมันจะ render ออกมาดิบๆ แบบนี้
-puts &quot;Hello, World&quot; ผมยังเลยลองปรับ style ให้กับแต่ละ pre &gt; code อีกนิดนึงโดยใช้ CSS แบบนี้
-body { line-height: 140%; margin: 50px; } pre &gt; code { font-size: 120%; background-color: #eee; border: 1px solid #999; display: block; padding: 20px; word-wrap: break-word; }  พอได้ CSS แบบนี้ก็ทำให้ตรงส่วนที่เป็นโค้ดอ่านง่ายขึ้นมาหน่อย ซึ่งก็ปรับง่ายๆแค่เปลี่ยนสี background-color ปรับ display ให้มันเป็น block แล้วปรับ padding ระยะระหว่าง text ข้างในกับขอบของ block แล้วก็ตีเส้นกรอบนิดหน่อย
     </div>
   </div>
 </div>

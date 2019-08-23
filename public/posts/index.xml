@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Weerasak Chongnguluam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 May 2019 23:50:10 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 12:33:30 +0700</lastBuildDate>
     
 	<atom:link href="https://iporsut.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ</title>
+      <link>https://iporsut.github.io/posts/code-block-style/</link>
+      <pubDate>Thu, 30 May 2019 12:33:30 +0700</pubDate>
+      
+      <guid>https://iporsut.github.io/posts/code-block-style/</guid>
+      <description>เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ เนื่องจากตอนนี้เวลาแสดง code ใน page ผมใช้ของง่ายๆคือ tag pre และ code เช่น
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;puts &amp;quot;Hello, World&amp;quot;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;  ซึ่งมันจะ render ออกมาดิบๆ แบบนี้
+puts &amp;quot;Hello, World&amp;quot; ผมยังเลยลองปรับ style ให้กับแต่ละ pre &amp;gt; code อีกนิดนึงโดยใช้ CSS แบบนี้
+body { line-height: 140%; margin: 50px; } pre &amp;gt; code { font-size: 120%; background-color: #eee; border: 1px solid #999; display: block; padding: 20px; word-wrap: break-word; }  พอได้ CSS แบบนี้ก็ทำให้ตรงส่วนที่เป็นโค้ดอ่านง่ายขึ้นมาหน่อย ซึ่งก็ปรับง่ายๆแค่เปลี่ยนสี background-color ปรับ display ให้มันเป็น block แล้วปรับ padding ระยะระหว่าง text ข้างในกับขอบของ block แล้วก็ตีเส้นกรอบนิดหน่อย</description>
+    </item>
     
     <item>
       <title>ติดตั้งของเพื่อสร้าง GRPC service ด้วย Go</title>
@@ -27,18 +39,6 @@
       
       <guid>https://iporsut.github.io/posts/nc/</guid>
       <description>คำสั่ง nc เป็นคำสั่งที่ติดมากับ macOS (จริงๆผมว่าก็หาลงได้นะสำหรับ Linux) ที่ช่วยให้เราสามารถ connect TCP socket หรือแม้แต่เปิด TCP socket เพื่อให้คนอื่น connect เข้ามาได้</description>
-    </item>
-    
-    <item>
-      <title>เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ</title>
-      <link>https://iporsut.github.io/posts/code-block-style/</link>
-      <pubDate>Sun, 26 May 2019 12:33:30 +0700</pubDate>
-      
-      <guid>https://iporsut.github.io/posts/code-block-style/</guid>
-      <description>เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ เนื่องจากตอนนี้เวลาแสดง code ใน page ผมใช้ของง่ายๆคือ tag pre และ code เช่น
-&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;puts &amp;quot;Hello, World&amp;quot;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;  ซึ่งมันจะ render ออกมาดิบๆ แบบนี้
-puts &amp;quot;Hello, World&amp;quot; ผมยังเลยลองปรับ style ให้กับแต่ละ pre &amp;gt; code อีกนิดนึงโดยใช้ CSS แบบนี้
-body { line-height: 140%; margin: 50px; } pre &amp;gt; code { font-size: 120%; background-color: #eee; border: 1px solid #999; display: block; padding: 20px; word-wrap: break-word; }  พอได้ CSS แบบนี้ก็ทำให้ตรงส่วนที่เป็นโค้ดอ่านง่ายขึ้นมาหน่อย ซึ่งก็ปรับง่ายๆแค่เปลี่ยนสี background-color ปรับ display ให้มันเป็น block แล้วปรับ padding ระยะระหว่าง text ข้างในกับขอบของ block แล้วก็ตีเส้นกรอบนิดหน่อย</description>
     </item>
     
   </channel>

@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://iporsut.github.io/" />
 
-<meta property="og:updated_time" content="2019-05-29T23:50:10+07:00" />
+<meta property="og:updated_time" content="2019-05-30T12:33:30+07:00" />
 <meta itemprop="name" content="Weerasak Chongnguluam">
 <meta itemprop="description" content="Weerasak Chongnguluam&#39;s blog">
 
@@ -146,6 +146,33 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/code-block-style/" class="color-inherit dim link">
+            เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ เนื่องจากตอนนี้เวลาแสดง code ใน page ผมใช้ของง่ายๆคือ tag pre และ code เช่น
+&lt;pre&gt;&lt;code&gt;puts &quot;Hello, World&quot;&lt;/code&gt;&lt;/pre&gt;  ซึ่งมันจะ render ออกมาดิบๆ แบบนี้
+puts &quot;Hello, World&quot; ผมยังเลยลองปรับ style ให้กับแต่ละ pre &gt; code อีกนิดนึงโดยใช้ CSS แบบนี้
+body { line-height: 140%; margin: 50px; } pre &gt; code { font-size: 120%; background-color: #eee; border: 1px solid #999; display: block; padding: 20px; word-wrap: break-word; }  พอได้ CSS แบบนี้ก็ทำให้ตรงส่วนที่เป็นโค้ดอ่านง่ายขึ้นมาหน่อย ซึ่งก็ปรับง่ายๆแค่เปลี่ยนสี background-color ปรับ display ให้มันเป็น block แล้วปรับ padding ระยะระหว่าง text ข้างในกับขอบของ block แล้วก็ตีเส้นกรอบนิดหน่อย
+        </div>
+          <a href="/posts/code-block-style/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/setup-grpc-go/" class="color-inherit dim link">
             ติดตั้งของเพื่อสร้าง GRPC service ด้วย Go
             </a>
@@ -178,33 +205,6 @@
           คำสั่ง nc เป็นคำสั่งที่ติดมากับ macOS (จริงๆผมว่าก็หาลงได้นะสำหรับ Linux) ที่ช่วยให้เราสามารถ connect TCP socket หรือแม้แต่เปิด TCP socket เพื่อให้คนอื่น connect เข้ามาได้
         </div>
           <a href="/posts/nc/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/code-block-style/" class="color-inherit dim link">
-            เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ เนื่องจากตอนนี้เวลาแสดง code ใน page ผมใช้ของง่ายๆคือ tag pre และ code เช่น
-&lt;pre&gt;&lt;code&gt;puts &quot;Hello, World&quot;&lt;/code&gt;&lt;/pre&gt;  ซึ่งมันจะ render ออกมาดิบๆ แบบนี้
-puts &quot;Hello, World&quot; ผมยังเลยลองปรับ style ให้กับแต่ละ pre &gt; code อีกนิดนึงโดยใช้ CSS แบบนี้
-body { line-height: 140%; margin: 50px; } pre &gt; code { font-size: 120%; background-color: #eee; border: 1px solid #999; display: block; padding: 20px; word-wrap: break-word; }  พอได้ CSS แบบนี้ก็ทำให้ตรงส่วนที่เป็นโค้ดอ่านง่ายขึ้นมาหน่อย ซึ่งก็ปรับง่ายๆแค่เปลี่ยนสี background-color ปรับ display ให้มันเป็น block แล้วปรับ padding ระยะระหว่าง text ข้างในกับขอบของ block แล้วก็ตีเส้นกรอบนิดหน่อย
-        </div>
-          <a href="/posts/code-block-style/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
