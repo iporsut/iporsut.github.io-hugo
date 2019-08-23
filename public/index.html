@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://iporsut.github.io/" />
 
-<meta property="og:updated_time" content="2019-05-31T22:35:00+07:00" />
+<meta property="og:updated_time" content="2019-06-01T14:31:45+07:00" />
 <meta itemprop="name" content="Weerasak Chongnguluam">
 <meta itemprop="description" content="Weerasak Chongnguluam&#39;s blog">
 
@@ -146,6 +146,33 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/el-ruby-escape-unescape-html/" class="color-inherit dim link">
+            สร้าง elisp ฟังก์ชันเพื่อ Escape HTML Entities โดยเรียกใช้ Ruby
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          ผมใช้ Emacs เป็นเครื่องมือหลักในการเขียนโค้ด รวมทั้งที่ใช้เขียน blog post นี้อยู่ด้วย ซึ่ง เราสามารถเพิ่มความสามารถต่างๆให้ Emacs ได้โดยการเขียน elisp ซึ่งเป็นภาษาตระกูล LISP ภาษาหนึ่งซึ่งติดมากับตัว Emacs เลย
+ผมอยากได้ฟีเจอร์นึงคือแปลงโค้ด HTML โดย escape HTML Entities ใน text ที่ผมเลือกเอาไว้อยู่ ซึ่งผมสามารถเขียน elisp ฟังก์ชันเพื่อช่วยแปลงได้ เพราะว่าผมพยายามหาแล้วมีคนเขียนฟังก์ชันไว้แล้วหลายคน แต่ไม่ถูกใจผม ผมอยากได้แบบเดียวกันกับที่ Ruby CGI.escape ทำซึ่งผมเขียนไว้ในโพสต์ก่อนหน้านี้
+ผมเลยได้ท่านี้มาคือ เขียน elisp ฟังก์ชันให้ส่งโค้ด Ruby ไปทำงานแล้วเอาผลลัพธ์กลับมา หน้าตา source code ของ elisp ฟังก์ชันเลยออกมาเป็นแบบนี้
+(defun escape-html (start end) (interactive &quot;r&quot;) (if (use-region-p) (let ((regionp (buffer-substring start end))) (delete-region start end) (call-process-region regionp nil &quot;ruby&quot; nil t nil &quot;-e&quot; &quot;# encoding: utf-8 require 'cgi' print CGI.
+        </div>
+          <a href="/posts/el-ruby-escape-unescape-html/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/what-can-be-inside-tag-p/" class="color-inherit dim link">
             HTML: มีอะไรอยู่ได้บ้างภายใน tag &lt;p&gt;
             </a>
@@ -195,39 +222,18 @@ require &quot;cgi&quot;; puts CGI.unescapeHTML('&amp;lt;div&amp;gt;Hello&amp;lt;
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/code-block-style/" class="color-inherit dim link">
-            เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ เนื่องจากตอนนี้เวลาแสดง code ใน page ผมใช้ของง่ายๆคือ tag pre และ code เช่น
-&lt;pre&gt;&lt;code&gt;puts &quot;Hello, World&quot;&lt;/code&gt;&lt;/pre&gt;  ซึ่งมันจะ render ออกมาดิบๆ แบบนี้
-puts &quot;Hello, World&quot; ผมยังเลยลองปรับ style ให้กับแต่ละ pre &gt; code อีกนิดนึงโดยใช้ CSS แบบนี้
-body { line-height: 140%; margin: 50px; } pre &gt; code { font-size: 120%; background-color: #eee; border: 1px solid #999; display: block; padding: 20px; word-wrap: break-word; }  พอได้ CSS แบบนี้ก็ทำให้ตรงส่วนที่เป็นโค้ดอ่านง่ายขึ้นมาหน่อย ซึ่งก็ปรับง่ายๆแค่เปลี่ยนสี background-color ปรับ display ให้มันเป็น block แล้วปรับ padding ระยะระหว่าง text ข้างในกับขอบของ block แล้วก็ตีเส้นกรอบนิดหน่อย
-        </div>
-          <a href="/posts/code-block-style/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/code-block-style/" class="link black dim">
+              เพิ่ม CSS เพื่อให้แสดง block ของ source code อย่างง่ายๆ
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/setup-grpc-go/" class="link black dim">

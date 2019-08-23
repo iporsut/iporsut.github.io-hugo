@@ -6,10 +6,22 @@
     <description>Recent content on Weerasak Chongnguluam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 May 2019 22:35:00 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2019 14:31:45 +0700</lastBuildDate>
     
 	<atom:link href="https://iporsut.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>สร้าง elisp ฟังก์ชันเพื่อ Escape HTML Entities โดยเรียกใช้ Ruby</title>
+      <link>https://iporsut.github.io/posts/el-ruby-escape-unescape-html/</link>
+      <pubDate>Sat, 01 Jun 2019 14:31:45 +0700</pubDate>
+      
+      <guid>https://iporsut.github.io/posts/el-ruby-escape-unescape-html/</guid>
+      <description>ผมใช้ Emacs เป็นเครื่องมือหลักในการเขียนโค้ด รวมทั้งที่ใช้เขียน blog post นี้อยู่ด้วย ซึ่ง เราสามารถเพิ่มความสามารถต่างๆให้ Emacs ได้โดยการเขียน elisp ซึ่งเป็นภาษาตระกูล LISP ภาษาหนึ่งซึ่งติดมากับตัว Emacs เลย
+ผมอยากได้ฟีเจอร์นึงคือแปลงโค้ด HTML โดย escape HTML Entities ใน text ที่ผมเลือกเอาไว้อยู่ ซึ่งผมสามารถเขียน elisp ฟังก์ชันเพื่อช่วยแปลงได้ เพราะว่าผมพยายามหาแล้วมีคนเขียนฟังก์ชันไว้แล้วหลายคน แต่ไม่ถูกใจผม ผมอยากได้แบบเดียวกันกับที่ Ruby CGI.escape ทำซึ่งผมเขียนไว้ในโพสต์ก่อนหน้านี้
+ผมเลยได้ท่านี้มาคือ เขียน elisp ฟังก์ชันให้ส่งโค้ด Ruby ไปทำงานแล้วเอาผลลัพธ์กลับมา หน้าตา source code ของ elisp ฟังก์ชันเลยออกมาเป็นแบบนี้
+(defun escape-html (start end) (interactive &amp;quot;r&amp;quot;) (if (use-region-p) (let ((regionp (buffer-substring start end))) (delete-region start end) (call-process-region regionp nil &amp;quot;ruby&amp;quot; nil t nil &amp;quot;-e&amp;quot; &amp;quot;# encoding: utf-8 require &#39;cgi&#39; print CGI.</description>
+    </item>
     
     <item>
       <title>HTML: มีอะไรอยู่ได้บ้างภายใน tag &lt;p&gt;</title>
