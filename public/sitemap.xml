@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://iporsut.github.io/posts/xcode-manpath/</loc>
-    <lastmod>2019-06-11T21:00:00+07:00</lastmod>
+    <loc>https://iporsut.github.io/posts/go-req-set-content-length/</loc>
+    <lastmod>2019-06-13T18:38:36+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://iporsut.github.io/posts/</loc>
-    <lastmod>2019-06-11T21:00:00+07:00</lastmod>
+    <lastmod>2019-06-13T18:38:36+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://iporsut.github.io/</loc>
+    <lastmod>2019-06-13T18:38:36+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://iporsut.github.io/posts/xcode-manpath/</loc>
     <lastmod>2019-06-11T21:00:00+07:00</lastmod>
   </url>
   

@@ -6,10 +6,20 @@
     <description>Recent content on Weerasak Chongnguluam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jun 2019 21:00:00 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2019 18:38:36 +0700</lastBuildDate>
     
 	<atom:link href="https://iporsut.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go Request: อย่าลืม ContentLength ถ้าไม่ได้กำหนด Body ด้วย NewRequest</title>
+      <link>https://iporsut.github.io/posts/go-req-set-content-length/</link>
+      <pubDate>Thu, 13 Jun 2019 18:38:36 +0700</pubDate>
+      
+      <guid>https://iporsut.github.io/posts/go-req-set-content-length/</guid>
+      <description>ปกติเวลาเราต้องการยิง HTTP Request ด้วย Go เราสามารถใช้ package net/http ช่วยได้โดยใช้การสร้าง request ใหม่แล้วเรียกเมธอด Do แบบนี้
+package main import ( &amp;quot;io&amp;quot; &amp;quot;log&amp;quot; &amp;quot;net/http&amp;quot; &amp;quot;os&amp;quot; &amp;quot;strings&amp;quot; ) func main() { r, err := http.NewRequest( &amp;quot;POST&amp;quot;, &amp;quot;https://httpbin.org/delay/1&amp;quot;, strings.NewReader(`{&amp;quot;say&amp;quot;: &amp;quot;Hello, World&amp;quot;}`)) if err != nil { log.Fatal(err) } resp, err := http.DefaultClient.Do(r) if err != nil { log.Fatal(err) } io.Copy(os.Stdout, resp.Body) }  สิ่งที่ http.NewRequest ทำให้นอกจากจะกำหนดค่าให้ r.Body แล้วยังกำหนดค่า r.ContentLength ให้อีกด้วย โดยหาขนาดจาก body ที่เราส่งเข้าไป แต่ถ้าเกิดเราเรียก http.NewRequest โดยกำหนด body เป็น nil ไปแล้วล่ะก็ r.</description>
+    </item>
     
     <item>
       <title>MANPATH ลับของ Xcode</title>
