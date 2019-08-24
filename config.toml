@@ -4,7 +4,7 @@ title = "Weerasak Chongnguluam"
 theme = "ananke"
 
 [params]
-  description = "Weerasak Chongnguluam's blog"
-  facebook = "https://facebook.com/iporsut"
-  twitter = "https://twitter.com/iporsut"
-  github = "https://github.com/iporsut"
+description = "Weerasak Chongnguluam's blog"
+facebook = "https://facebook.com/iporsut"
+twitter = "https://twitter.com/iporsut"
+github = "https://github.com/iporsut"
