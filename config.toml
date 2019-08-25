@@ -2,6 +2,7 @@ baseURL = "https://iporsut.github.io/"
 languageCode = "en-us"
 title = "Weerasak Chongnguluam"
 theme = "ananke"
+disqusShortname = "iporsut"
 
 [params]
   description = "Weerasak Chongnguluam's blog"
